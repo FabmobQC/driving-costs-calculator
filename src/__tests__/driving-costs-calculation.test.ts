@@ -1,4 +1,5 @@
-import { DrivingCostsCalculator, VehiculeType } from '../index'
+import { type VehiculeType } from '../config'
+import { DrivingCostsCalculator } from '../index'
 
 describe('Calculate driving costs', () => {
   const drivingCostsCalculator = new DrivingCostsCalculator()
