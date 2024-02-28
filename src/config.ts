@@ -12,9 +12,30 @@ export interface VehiculeCosts {
   registration: number // $/year
 }
 
+export const montrealAgglomerations = [
+  'Ahuntsic-Cartierville',
+  'Côte-des-Neiges-Notre-Dame-de-Grâce',
+  'Lachine',
+  'Mercier-Hochelaga-Maisonneuve',
+  'Outremont',
+  'Le Plateau-Mont-Royal',
+  'Rosemont-La Petite-Patrie',
+  'Le Sud-Ouest',
+  'Verdun',
+  'Ville-Marie',
+  'Villeray-Saint-Michel-Parc-Extension',
+  'Saint-Laurent'
+] as const
+
+export type MontrealAgglomeration = typeof montrealAgglomerations[number]
+
+export const isMontrealAgglomeration = (value: unknown): value is MontrealAgglomeration => {
+  return montrealAgglomerations.includes(value as any)
+}
 export interface Config {
   vehiculesCosts: Record<VehiculeType, VehiculeCosts>
   fuelPrice: number // $/L
+  parkingCosts: Record<MontrealAgglomeration, number> // $/hour
 }
 
 export const defaultConfig: Config = {
@@ -75,5 +96,19 @@ export const defaultConfig: Config = {
       registration: 233
     }
   },
-  fuelPrice: 1.59
+  fuelPrice: 1.59,
+  parkingCosts: {
+    'Ahuntsic-Cartierville': 2.50,
+    'Côte-des-Neiges-Notre-Dame-de-Grâce': 3.00,
+    Lachine: 2.50,
+    'Mercier-Hochelaga-Maisonneuve': 2.00,
+    Outremont: 3.00,
+    'Le Plateau-Mont-Royal': 4.00,
+    'Rosemont-La Petite-Patrie': 2.00,
+    'Le Sud-Ouest': 2.00,
+    Verdun: 2.50,
+    'Ville-Marie': 2.00,
+    'Villeray-Saint-Michel-Parc-Extension': 2.00,
+    'Saint-Laurent': 2.00
+  }
 }
