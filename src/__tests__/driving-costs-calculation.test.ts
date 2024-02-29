@@ -1,5 +1,4 @@
-import { defaultConfig, MontrealAgglomeration, type NbKmPerYear, type VehiculeType } from '../config'
-import { DrivingCostsCalculator } from '../index'
+import { defaultConfig, DrivingCostsCalculator, MontrealAgglomeration, type NbKmPerYear, type VehiculeType } from '../index'
 
 describe('Calculate driving costs', () => {
   const drivingCostsCalculator = new DrivingCostsCalculator()

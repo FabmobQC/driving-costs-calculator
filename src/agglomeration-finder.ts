@@ -2,8 +2,8 @@ import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 import * as turf from '@turf/helpers'
 import { type MultiPolygon, type FeatureCollection } from '@turf/helpers'
 
-import { type MontrealAgglomeration, isMontrealAgglomeration } from './config'
-import { loadJsonFile } from './files-tools'
+import { type MontrealAgglomeration, isMontrealAgglomeration } from './config.js'
+import { loadJsonFile } from './files-tools.js'
 
 export interface MontrealAgglomerationLimitProperties {
   CODEID: number

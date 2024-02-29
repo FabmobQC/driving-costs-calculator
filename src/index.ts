@@ -1,2 +1,2 @@
-export * from './driving-costs-calculator'
-export * from './config'
+export * from './driving-costs-calculator.js'
+export * from './config.js'

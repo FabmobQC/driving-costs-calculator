@@ -6,7 +6,11 @@ const config: Config = {
   testEnvironment: 'jsdom',
   testMatch: [
     '<rootDir>/**/__tests__/**/*.test.ts'
-  ]
+  ],
+  
+  moduleNameMapper: {
+    '^(.+)\.js$': '$1',
+  }  
 }
 
 export default config

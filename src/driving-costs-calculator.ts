@@ -1,5 +1,5 @@
-import { findMontrealAgglomeration, type Coordinate } from './agglomeration-finder'
-import { defaultConfig, type Config, type NbKmPerYear, type VehiculeType } from './config'
+import { findMontrealAgglomeration, type Coordinate } from './agglomeration-finder.js'
+import { defaultConfig, type Config, type NbKmPerYear, type VehiculeType } from './config.js'
 
 export class DrivingCostsCalculator {
   private readonly config: Config
