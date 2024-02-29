@@ -1,6 +1,11 @@
 export type VehiculeType = 'small' | 'medium' | 'large' | 'vus' | 'sport'
 
-export type NbKmPerYear = 10000 | 20000 | 30000 // km/year
+const nbKmPerYearValues = [10000, 20000, 30000] as const
+export type NbKmPerYear = typeof nbKmPerYearValues[number] // km/year
+
+export const isNbKmPerYear = (value: unknown): value is NbKmPerYear => {
+  return nbKmPerYearValues.includes(value as any)
+}
 
 export interface VehiculeCosts {
   consommation: number // L/100km
