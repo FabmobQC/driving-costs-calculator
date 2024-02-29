@@ -5,6 +5,7 @@ import { type MultiPolygon, type FeatureCollection } from '@turf/helpers'
 
 import { type MontrealAgglomeration, isMontrealAgglomeration } from './config.js'
 import { loadJsonFile } from './files-tools.js'
+import { __dirname } from './esm-polyfill.js'
 
 export interface MontrealAgglomerationLimitProperties {
   CODEID: number

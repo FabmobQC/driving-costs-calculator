@@ -1,4 +1,12 @@
+import path from 'path'
 import { defaultConfig, DrivingCostsCalculator, type MontrealAgglomeration, type NbKmPerYear, type VehiculeType } from '../index'
+
+jest.mock('../esm-polyfill.js', () => ({
+  // Jest complains about 'import.meta' in our polyfill.
+  // This workaround works only because we know where __dirname is called.
+  // It will break as soon as it is called from a subdirectory
+  __dirname: path.basename(__dirname)
+}))
 
 describe('Calculate driving costs', () => {
   const drivingCostsCalculator = new DrivingCostsCalculator()
