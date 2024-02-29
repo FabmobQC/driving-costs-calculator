@@ -7,10 +7,11 @@ const config: Config = {
   testMatch: [
     '<rootDir>/**/__tests__/**/*.test.ts'
   ],
-  
+
   moduleNameMapper: {
-    '^(.+)\.js$': '$1',
-  }  
+    // eslint-disable-next-line no-useless-escape -- '.' has to be escaped for the regex
+    '^(.+)\.js$': '$1'
+  }
 }
 
 export default config
