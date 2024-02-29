@@ -1,3 +1,4 @@
+import path from 'path'
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 import * as turf from '@turf/helpers'
 import { type MultiPolygon, type FeatureCollection } from '@turf/helpers'
@@ -26,7 +27,9 @@ export interface Coordinate {
   lon: number
 }
 
-const montrealAgglomerationsLimits = loadJsonFile('./data/limites-administratives-agglomeration.geojson') as unknown as MontrealAgglomerationLimitFeatureCollection
+const montrealAgglomerationsLimits = loadJsonFile(
+  path.join(__dirname, '../data/limites-administratives-agglomeration.geojson')
+) as unknown as MontrealAgglomerationLimitFeatureCollection
 
 export const findMontrealAgglomeration = (coordinate: Coordinate): MontrealAgglomeration | undefined => {
   const point = turf.point([coordinate.lon, coordinate.lat])
