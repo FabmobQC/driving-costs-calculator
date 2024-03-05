@@ -1,6 +1,6 @@
 export type VehiculeType = 'small' | 'medium' | 'large' | 'vus' | 'sport'
 
-const nbKmPerYearValues = [10000, 20000, 30000] as const
+const nbKmPerYearValues = [10000, 15000, 20000, 30000] as const
 export type NbKmPerYear = typeof nbKmPerYearValues[number] // km/year
 
 export const isNbKmPerYear = (value: unknown): value is NbKmPerYear => {
@@ -50,6 +50,7 @@ export const defaultConfig: Config = {
       depreciation: 3000,
       maintenance: {
         10000: 682.34,
+        15000: 996.98,
         20000: 1311.61,
         30000: 2777.74
       },
@@ -61,6 +62,7 @@ export const defaultConfig: Config = {
       depreciation: 4200,
       maintenance: {
         10000: 620.88,
+        15000: 1048.00,
         20000: 1475.11,
         30000: 3183.83
       },
@@ -72,6 +74,7 @@ export const defaultConfig: Config = {
       depreciation: 5400,
       maintenance: {
         10000: 508.51,
+        15000: 833.76,
         20000: 1159.01,
         30000: 2642.15
       },
@@ -83,6 +86,7 @@ export const defaultConfig: Config = {
       depreciation: 6600,
       maintenance: {
         10000: 714.90,
+        15000: 1203.36,
         20000: 1691.82,
         30000: 2944.08
       },
@@ -94,6 +98,7 @@ export const defaultConfig: Config = {
       depreciation: 7800,
       maintenance: {
         10000: 584.90,
+        15000: 916.60,
         20000: 1248.29,
         30000: 2585.57
       },
